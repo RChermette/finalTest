@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FinalTest.Tests
+namespace FinalTest
 {
     public class RetraitRéalisé : IEvenementMetier
     {

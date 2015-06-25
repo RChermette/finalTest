@@ -1,5 +1,4 @@
 using System;
-using FinalTest.Tests;
 
 namespace FinalTest
 {
