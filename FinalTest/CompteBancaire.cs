@@ -21,5 +21,10 @@ namespace FinalTest
         {
             yield return new DépotRéalisé(_numéroDeCompte, montantDepot, dateDepot);
         }
+
+        public IEnumerable<IEvenementMetier> FaireUnRetrait(Montant montantRetrait, DateTime dateRetrait)
+        {
+            yield return new RetraitRéalisé(_numéroDeCompte, montantRetrait, dateRetrait);
+        }
     }
 }
