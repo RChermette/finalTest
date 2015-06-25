@@ -23,15 +23,15 @@ namespace FinalTest.Tests
             Check.That(typeof(TypeValeur).IsValueType).IsTrue();
         }
 
-        //[Test]
-        //public void DéfinirUnTypeRéférenceAvecEgalitéDeuxInstancesAyantLesMêmesPropriétés()
-        //{
-        //    var valeur1 = new TypeReference(12);
-        //    var valeur2 = new TypeReference(12);
+        [Test]
+        public void DéfinirUnTypeRéférenceAvecEgalitéDeuxInstancesAyantLesMêmesPropriétés()
+        {
+            var valeur1 = new TypeReference(12);
+            var valeur2 = new TypeReference(12);
 
-        //    Check.That(valeur1).IsEqualTo(valeur2);
-        //    Check.That(typeof(TypeReference).IsValueType).IsFalse();
-        //}
+            Check.That(valeur1).IsEqualTo(valeur2);
+            Check.That(typeof(TypeReference).IsValueType).IsFalse();
+        }
 
         //[Test]
         //public void DéfinirUneClasseRealisantUneMultiplication()
@@ -77,6 +77,26 @@ namespace FinalTest.Tests
         {
             // TODO: Complete member initialization
             this.p = p;
+        }
+    }
+
+    public class TypeReference
+    {
+        private int p;
+
+        public TypeReference(int p)
+        {
+            // TODO: Complete member initialization
+            this.p = p;
+        }
+        public override bool Equals(Object obj)
+        {
+            // Check for null values and compare run-time types.
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            TypeReference tReference = (TypeReference)obj;
+            return (p == tReference.p);
         }
     }
 }
