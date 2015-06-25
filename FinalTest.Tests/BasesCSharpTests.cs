@@ -43,15 +43,15 @@ namespace FinalTest.Tests
             Check.That(multiplication.Calculer("2*3")).IsEqualTo(6);
         }
 
-        //[Test]
-        //public void DéfinirUneClasseRealisantUneSomme()
-        //{
-        //    var somme = new Somme();
+        [Test]
+        public void DéfinirUneClasseRealisantUneSomme()
+        {
+            var somme = new Somme();
 
-        //    Check.That(somme.PeutCalculer("2+3")).IsTrue();
-        //    Check.That(somme.PeutCalculer("2*3")).IsFalse();
-        //    Check.That(somme.Calculer("2+3")).IsEqualTo(5);
-        //}
+            Check.That(somme.PeutCalculer("2+3")).IsTrue();
+            Check.That(somme.PeutCalculer("2*3")).IsFalse();
+            Check.That(somme.Calculer("2+3")).IsEqualTo(5);
+        }
 
         //[Test]
         //public void DéfinirUneInterfaceStrategieAvec2ImplémentationsPrécédentesPasséesEnParamètreDUneClasseCliente()
@@ -67,6 +67,35 @@ namespace FinalTest.Tests
         //    Check.That(resultatProduit).IsEqualTo(6);
         //    Check.That(resultatSomme).IsEqualTo(3);
         //}
+    }
+
+    public class Somme
+    {
+        public Boolean PeutCalculer(string p0)
+        {
+            Boolean retour = false;
+            if (p0.Contains("+"))
+            {
+                retour = true;
+            }
+            if (p0.Contains("*") == true)
+            {
+                retour = false;
+            }
+            return retour;
+        }
+
+        public int Calculer(string s)
+        {
+            string i;
+            i = s.Substring(0, 1);
+            string j;
+            j = s.Substring(2, 1);
+            int num1 = int.Parse(i);
+            int num2 = int.Parse(j);
+            int retour = num1 + num2;
+            return retour;
+        }
     }
 
     public class Multiplication
