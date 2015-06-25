@@ -9,14 +9,14 @@ namespace FinalTest.Tests
     {
         private readonly string _numéroDeCompte = Guid.NewGuid().ToString();
 
-        //[Test]
-        //public void OuvrirUnCompteBancaireProduitUnEvénement()
-        //{
-        //    var autorisationDeCrédit = 0;
-        //    var evenements = CompteBancaire.Ouvrir(_numéroDeCompte, autorisationDeCrédit); // retourne un IEnumerable<IEvenementMetier> contenant l'événement CompteCréé
+        [Test]
+        public void OuvrirUnCompteBancaireProduitUnEvénement()
+        {
+            var autorisationDeCrédit = 0;
+            var evenements = CompteBancaire.Ouvrir(_numéroDeCompte, autorisationDeCrédit); // retourne un IEnumerable<IEvenementMetier> contenant l'événement CompteCréé
 
-        //    Check.That(evenements).ContainsExactly(new CompteCréé(_numéroDeCompte, autorisationDeCrédit));
-        //}
+            Check.That(evenements).ContainsExactly(new CompteCréé(_numéroDeCompte, autorisationDeCrédit));
+        }
 
         //[Test]
         //public void EtantDonnéUnCompteBancaireFaireUnDepotProduitUnEvenement()
